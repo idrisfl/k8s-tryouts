@@ -1,0 +1,7 @@
+cd ./src
+docker login
+docker build -t idrisfl/k8s-getting-started-20210905:latest .
+docker run -d -p 8085:80 --name getting-started-k8scontainer-20210905 idrisfl/k8s-getting-started-20210905:latest
+
+# To add and connect to an AKS cluster locally
+az aks get-credentials --resource-group rg-k8s --name my-k8s-cluster --admin
